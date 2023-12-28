@@ -87,7 +87,7 @@ gallery.innerHTML = images.map(galleryItem).join('');
 
 import SimpleLightbox from 'simplelightbox';
 
-const lightbox = new SimpleLightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   nav: true,
   captionDelay: 250,
   captionsData: 'alt',
