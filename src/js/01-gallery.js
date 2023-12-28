@@ -83,11 +83,13 @@ const galleryItem = ({ preview, original, description }) => {
 `;
 };
 
-gallery.innerHTML = images.map(galleryItem).join('');
+const galleryMarkup = images.map(galleryItem).join('');
+
+gallery.innerHTML = galleryMarkup;
 
 import SimpleLightbox from 'simplelightbox';
 
-new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
   nav: true,
   captionDelay: 250,
   captionsData: 'alt',
