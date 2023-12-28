@@ -68,31 +68,30 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-gallery.innerHTML = images.reduce((html, { preview, original, description }) => html + `
-<li class="gallery-item">
-    <a class="gallery-link" href="${original}">
-        <img
-            class="gallery-image"
-            src="${preview}"
-            alt="${description}"
-            />
-    </a>
-</li>`, '');
+const galleryItem = ({ preview, original, description }) => {
+  return `
+  <li class='gallery-item'>
+  <a class='gallery-link' href='${original}'>
+    <img
+      class='gallery-image'
+      src='${preview}'
+      data-source='${original}'
+      alt='${description}'
+    />
+  </a>
+</li>
+`;
+};
 
+gallery.innerHTML = images.map(galleryItem).join('');
 
-import "simplelightbox/dist/simple-lightbox.min.css";
-import simpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 
-new SimpleLightbox('.gallery a', {
-  closeText: `<svg class="close-btn">
-        <use href="./img/icons.svg#close"></use>
-</svg>`,
-    navText: [`<svg class="arrow-btn">
-        <use href="./img/icons.svg#arrow-left"></use>
-</svg>`,
-        `<svg class="arrow-btn">
-        <use href="./img/icons.svg#arrow-right"></use>
-</svg>`],
-    captionsData: 'alt',
-    captionDelay: 250
+const lightbox = new SimpleLightbox('.gallery a', {
+  nav: true,
+  captionDelay: 250,
+  captionsData: 'alt',
+  close: true,
+  enableKeyboard: true,
+  docClose: true,
 });
