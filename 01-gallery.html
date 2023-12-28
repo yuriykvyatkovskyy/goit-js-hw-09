@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-09/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 9</title>
+    <title>Gallery</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,24 +13,20 @@
       rel="stylesheet"
     />
     
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/modulepreload-polyfill-ec808ebb.js"></script>
+    <script type="module" crossorigin src="/goit-js-hw-09/assets/vendor-848f0138.js"></script>
     <link rel="stylesheet" href="/goit-js-hw-09/assets/styles-6b9b2010.css">
   </head>
   <body>
-    <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./01-gallery.html" class="nav-link">Gallery</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="./02-form.html" class="nav-link">Form</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-
-    <img class="main-logo" src="/goit-js-hw-09/assets/vite-logo-51249ca9.png" alt="vite-logo" />
+    <section>
+      <p class="section-link">
+        <a class="nav-link" href="./index.html">Go to home</a>
+      </p>
+      <h1>Welcome to Gallery</h1>
+      <div class="container">
+        <ul class="gallery"></ul>
+      </div>
+    </section>
+    
   </body>
 </html>
