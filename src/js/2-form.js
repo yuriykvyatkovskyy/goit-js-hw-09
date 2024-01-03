@@ -2,8 +2,6 @@ const LOCAL_KEY = 'feedback-form-state';
 
 const form = document.querySelector('.feedback-form');
 
-document.addEventListener('DOMContentLoaded', renderPage);
-
 form.addEventListener('submit', event => {
   event.preventDefault();
   const { email, message } = form.elements;
@@ -41,3 +39,5 @@ function renderPage() {
     messageInput.value = message;
   }
 }
+
+document.addEventListener('DOMContentLoaded', renderPage);

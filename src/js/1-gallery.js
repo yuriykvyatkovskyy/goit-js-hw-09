@@ -1,3 +1,5 @@
+import SimpleLightbox from "simplelightbox";
+
 const images = [
   {
     preview:
@@ -68,28 +70,21 @@ const gallery = document.querySelector(".gallery");
 
 const galleryItem = ({ preview, original, description }) => {
   return `
-  <li class='gallery-item'>
-  <a class='gallery-link' href='${original}'>
+  <li class="gallery-item">
+  <a class="gallery-link" href="${original}">
     <img
-      class='gallery-image'
-      src='${preview}'
-      data-source='${original}'
-      alt='${description}'
+      class="gallery-image"
+      src="${preview}"
+      alt="${description}"
     />
   </a>
 </li>
 `;
 };
 
-gallery.innerHTML = images.map(galleryItem).join('');
+gallery.innerHTML = images.map(galleryItem).join("");
 
-import SimpleLightbox from 'simplelightbox';
-
-new SimpleLightbox('.gallery a', {
-  nav: true,
+new SimpleLightbox(".gallery a", {
   captionDelay: 250,
-  captionsData: 'alt',
-  close: true,
-  enableKeyboard: true,
-  docClose: true,
+  captionsData: "alt",
 });
